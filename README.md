@@ -1,40 +1,65 @@
 ## Homework 1
 *[#homework]() [#cicd1]()*
 1. Open https://gitlab.devops.telekom.de
-2. Create a new private project
-3. Create a pipeline with 3 stages “build – test – deploy”
-4. Send screenshot of pipeline in chat with homework's hashtags
+2. Create a new private project in personal space.
+3. Create a pipeline with 3 stages “build – test – deploy” with dummy `echo` scripts.
+4. Send screenshot of pipeline in chat with homework's hashtags.
 
 ### Links 1
 
 ## Homework 2
 *[#homework]() [#cicd2]()*
-1. Add building of any application in pipeline.
-2. Add docker tags for jobs as anchor.
-3. Add artifacts for “test” with expiration in one day.
-4. Send screenshot of artifacts expiration be in chat with homework's hashtags
-
+1. Import [backend](https://github.com/tdevopsschool/dev-school-app) and [frontend](https://github.com/tdevopsschool/dev-school-front-app) into personal gitlab space separately.
+2. Configure **.gitlab-ci.yml** to buil applications in pipelines without dockerization.
+3. Keep builded jar files as artifacts with expiration in 1 hour.
+4. Send screenshots of artifacts in chat with homework's hashtags.
 
 ### Links 2
 
-## Homework 3
-*[#homework]() [#cicd3]()*
-1. Add application from “build” to artifacts with expiration in 1 hour.
-2. Add a stage and job to dockerize application from artifacts.
-3. Push resulted docker image to any container registry with pipeline number tag.
-4. Add cache for build job.
-<img width="798" alt="image" src="https://user-images.githubusercontent.com/10992037/184492852-cbaa2b24-86b4-4e64-a789-3942889df62f.png">
+## Homework 3-1
+*[#homework]() [#cicd3-1]()*
+1. Remove arifacts section and change build to using `./gradlew jib` plugin task. Jib builds docker container without Docker daemon, so you are free to use any gitlab runner for that task
+```bash
+./gradlew 
+--build-cache 
+--parallel 
+--max-workers=3 
+-g /cache/.gradle 
+jib 
+-Djib.console=plain 
+-PappName=Devops-School-App 
+-Pversion=1.0
+-Pregistry=<DOCKER_REGISTRY>
+-PregistryPushImage=<DOCKER_IMAGE>
+-PregistryPushUser=<REGISTRY_USER>
+-PregistryPushPassword=<REGISTRY_PASSWORD>
+--no-daemon -s
+```
+3. Configure **build.gradle** of backend and frontend to push created image into gitlab registry with pipeline number tag
+4. Addinitionally you need to add docker config into **.gitlab-ci.yml** for pushing by jib plugin
+```bash
+- >  # Render docker config using Gitlab Variables
+      printf '{"auths":{"%s":{"auth":"%s"}}}'
+      $GITLAB_REGISTRY $(echo "$GITLAB_REGISTRY_USER:$GITLAB_REGISTRY_PASSWORD" | tr -d '\n' | base64 -i -w 0) > ~/.docker/config.json
+- export DOCKER_CONFIG=~/.docker/config.json
+```
+5. Send screenshots of images from gitlab docker registries with homework's hashtags.
 
-5. When added – send line from job with homework's hashtags
+### Links 3-1
 
+## Homework 3-2
+*[#homework]() [#cicd3-2]()*
+1. Add gradle cache and image cache for build jobs. (?)
+2. When added – send line from job with homework's hashtags
 
-### Links 3
+### Links 3-2
 
 ## Homework 4
 *[#homework]() [#cicd4]()*
-1. Add “dev” and “prod” environments
-2. Add any URLs for both environments
-3. Screenshot with environments should in chat with homework's hashtags
 
+*You will use this workpiece later in Kubernetes module*
+1. Add dummy deploy jobs for “dev” and “prod” environments.
+3. Add any URLs for both environments.
+4. Screenshot with environments should be in chat with homework's hashtags.
 
 ### Links 4
