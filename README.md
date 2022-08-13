@@ -10,7 +10,7 @@
 ## Homework 2
 *[#homework]() [#cicd2]()*
 1. Import [backend](https://github.com/tdevopsschool/dev-school-app) and [frontend](https://github.com/tdevopsschool/dev-school-front-app) into personal gitlab space separately.
-2. Configure **.gitlab-ci.yml** to buil applications in pipelines without dockerization.
+2. Configure **.gitlab-ci.yml** to build applications in pipelines without dockerization.
 3. Keep builded jar files as artifacts with expiration in 1 hour.
 4. Send screenshots of artifacts in chat with homework's hashtags.
 
@@ -35,7 +35,7 @@ jib
 -PregistryPushPassword=<REGISTRY_PASSWORD>
 --no-daemon -s
 ```
-3. Configure **build.gradle** of backend and frontend to push created image into gitlab registry with pipeline number tag
+3. Configure **build.gradle** of backend and frontend to push created images into gitlab registry with pipeline number tag
 4. Addinitionally you need to add docker config into **.gitlab-ci.yml** for pushing by jib plugin
 ```bash
 - >  # Render docker config using Gitlab Variables
@@ -54,12 +54,23 @@ jib
 
 ### Links 3-2
 
-## Homework 4
-*[#homework]() [#cicd4]()*
+## Homework 4-1
+*[#homework]() [#cicd4-1]()*
 
 *You will use this workpiece later in Kubernetes module*
 1. Add dummy deploy jobs for “dev” and “prod” environments.
 3. Add any URLs for both environments.
 4. Screenshot with environments should be in chat with homework's hashtags.
 
-### Links 4
+### Links 4-1
+
+## Homework 4-2
+*[#homework]() [#cicd4-2]()*
+
+1. Rewrite **.gitlab-ci.yml** to use `include` directive:
+- Create another one repo for CI yml files
+- Move CI from main repos into new CI repo
+- Use `include` to merge CI into main repos
+2. Screenshot with files of new CI repo should be in chat with homework's hashtags.
+
+### Links 4-2
