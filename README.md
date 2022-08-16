@@ -20,7 +20,10 @@
 4. Send screenshots of artifacts in chat with homework's hashtags.
 
 ### Links 2-1
+- [Import project fron GitHub to Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html)
+- [.gitlab-ci.yml file](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
 - [Predefined variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
+- [Gitlab job artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
 
 ## Homework 2-2
 *[#homework]() [#cicd2-2]()*
@@ -31,6 +34,7 @@
 2. Screenshot with files of new CI repo should be in chat with homework's hashtags.
 
 ### Links 2-2
+- [Gitlab CI include examples](https://docs.gitlab.com/ee/ci/yaml/includes.html)
 
 ## Homework 3
 *[#homework]() [#cicd3]()*
@@ -62,6 +66,9 @@ jib
 5. Send screenshots of images from gitlab docker registries with homework's hashtags.
 
 ### Links 3
+- [Kaniko docs](https://github.com/GoogleContainerTools/kaniko)
+- [Using Kaniko to build Docker images](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html)
+- (https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation)
 
 ## Homework 4-1
 *[#homework]() [#cicd4-1]()*
