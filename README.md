@@ -34,7 +34,10 @@
 2. Screenshot with files of new CI repo should be in chat with homework's hashtags.
 
 ### Links 2-2
-- [Gitlab CI include examples](https://docs.gitlab.com/ee/ci/yaml/includes.html)
+- [Gitlab anchors](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#anchors)
+- [Gitlab extends](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#use-extends-to-reuse-configuration-sections)
+- [Gitlab CI include](https://docs.gitlab.com/ee/ci/yaml/includes.html)
+- [Use extends and include together](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#use-extends-and-include-together)
 
 ## Homework 3
 *[#homework]() [#cicd3]()*
