@@ -1,26 +1,28 @@
 ## Homework 1
 *[#homework]() [#cicd1]()*
 1. Open gitlab
-2. Create a new private project in personal space.
+2. Import [course project](https://github.com/tdevopsschool/course-project/tree/main) into personal gitlab space.
 3. Create a pipeline with 3 stages “build – test – deploy” with dummy `echo` scripts.
 4. Send screenshot of pipeline in chat with homework's hashtags.
 
 ### Links 1
+- [Gitlab docs](https://docs.gitlab.com)
+- [Registering Gitlab Runner](https://docs.gitlab.com/runner/register/index.html)
+- [Import project to Gitlab by URL](https://docs.gitlab.com/ee/user/project/import/repo_by_url.html)
+
+Additional
 - [Martin Fowler’s CI](https://martinfowler.com/articles/continuousIntegration.html)
 - [Martin Fowler’s CD](https://martinfowler.com/bliki/ContinuousDelivery.html)
 - [CD SAFE](https://v46.scaledagileframework.com/continuous-delivery-pipeline)
-- [Gitlab docs](https://docs.gitlab.com)
-- [Registering Gitlab Runner](https://docs.gitlab.com/runner/register/index.html)
 
 ## Homework 2-1
 *[#homework]() [#cicd2-1]()*
-1. Import [course project](https://github.com/tdevopsschool/course-project/tree/main) into personal gitlab space.
-2. Configure **.gitlab-ci.yml** to build applications in pipelines without dockerization.
-3. Keep builded jar files as artifacts with expiration in 1 hour.
+1. Remove all dummy stages from previous homework except build stage
+2. Configure **.gitlab-ci.yml** to build applications in build stage without dockerization.
+3. Keep builded jar files as job artifacts with expiration in 1 hour.
 4. Send screenshots of artifacts in chat with homework's hashtags.
 
 ### Links 2-1
-- [Import project fron GitHub to Gitlab](https://docs.gitlab.com/ee/user/project/import/github.html)
 - [.gitlab-ci.yml file](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
 - [Predefined variables](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 - [Gitlab job artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
@@ -66,12 +68,16 @@ jib
       $GITLAB_REGISTRY $(echo "$GITLAB_REGISTRY_USER:$GITLAB_REGISTRY_PASSWORD" | tr -d '\n' | base64 -i -w 0) > ~/.docker/config.json
 - export DOCKER_CONFIG=~/.docker/config.json
 ```
-5. Send screenshots of images from gitlab docker registries with homework's hashtags.
+5. Send screenshots of images from gitlab docker registry with homework's hashtags.
 
 ### Links 3
+- [Use Docker to build Docker images](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)
 - [Kaniko docs](https://github.com/GoogleContainerTools/kaniko)
 - [Using Kaniko to build Docker images](https://docs.gitlab.com/ee/ci/docker/using_kaniko.html)
-- (https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation)
+
+Additional
+- [Docker breakout privilege escalation](https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout/docker-breakout-privilege-escalation)
+- [Understanding Docker container escapes](https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes)
 
 ## Homework 4-1
 *[#homework]() [#cicd4-1]()*
