@@ -95,3 +95,4 @@ Additional
 2. When added – send line from job with homework's hashtags
 
 ### Links 4-2
+[API resources](https://docs.gitlab.com/ee/api/api_resources.html)
