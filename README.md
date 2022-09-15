@@ -70,7 +70,7 @@ Additional
 1. Rewrite **.gitlab-ci.yml** to use `include` directive:
 - Create new one repo for CI yml files
 - Move CI from course project repo into new CI repo
-- Use **include** for injection moved CI from new project into course project
+- Use **include** to inject CI from new project into course project
 2. Screenshots with files of new CI and course project repositories should be in chat with homework's hashtags.
 
 ### Links 4-1
