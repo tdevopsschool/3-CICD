@@ -17,10 +17,9 @@ Additional
 
 ## Homework 2-1
 *[#homework]() [#cicd2-1]()*
-1. Remove all dummy stages from previous homework except build stage.
-2. Configure **.gitlab-ci.yml** to build applications in build stage without dockerization.
-3. Keep builded jar files as job artifacts with expiration in 1 hour.
-4. Send screenshots of artifacts in chat with homework's hashtags.
+1. Configure **.gitlab-ci.yml** to build applications in build stage without dockerization.
+2. Keep builded jar files as job artifacts with expiration in 1 hour.
+3. Send screenshots of artifacts in chat with homework's hashtags.
 
 ### Links 2-1
 - [.gitlab-ci.yml file](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
@@ -37,16 +36,11 @@ Additional
 
 ## Homework 3-1
 *[#homework]() [#cicd3-1]()*
-1. Remove arifact and cache sections.
-2. Use **dind service** to build and push images.
-3. Addinitionally you need to add docker config into **.gitlab-ci.yml** for pushing images. Use **before_script** for that
-```bash
-- >  # Render docker config using Gitlab Variables
-      printf '{"auths":{"%s":{"auth":"%s"}}}'
-      $GITLAB_REGISTRY $(echo "$GITLAB_REGISTRY_USER:$GITLAB_REGISTRY_PASSWORD" | tr -d '\n' | base64 -i -w 0) > ~/.docker/config.json
-- export DOCKER_CONFIG=~/.docker/config.json
-```
-4. Send screenshots of using dind in **gitlab-ci.yml** with homework's hashtags.
+1. Add new stage **dockerization**.
+2. Use **dind service** to package jar files from build stage and push images.
+3. Addinitionally you need to add a docker config as Gitlab variable DOCKER_CONFIG to push images in Gitlab registry. You will need predefined Gitlab variables for that.
+4. Use hash of commit as image tag 
+5. Send screenshots of using dind in **gitlab-ci.yml** with homework's hashtags.
 
 ### Links 3-1
 - [Use Docker-in-Docker](Docker-in-Docker with TLS enabled in the Docker executor)
@@ -58,8 +52,9 @@ Additional
 
 ## Homework 3-2
 *[#homework]() [#cicd3-2]()*
-1. Remove dind solution and use Kaniko instead.
-2. Send screenshots of using Kaniko in **gitlab-ci.yml** with homework's hashtags.
+1. Add dockerization jobs with Kaniko in dockerization stage.
+2. Send screenshots with all dockerization jobs (dind and Kaniko) in **gitlab-ci.yml** with homework's hashtags.
+3. Remove DIND dockerization and keep Kaniko as best practice.
 
 ### Links 3-2
 - [Kaniko docs](https://github.com/GoogleContainerTools/kaniko)
@@ -68,10 +63,10 @@ Additional
 ## Homework 4-1
 *[#homework]() [#cicd4-1]()*
 1. Rewrite **.gitlab-ci.yml** to use `include` directive:
-- Create another one repo for CI yml files
-- Move CI from main repos into new CI repo
-- Use `include` to merge CI into main repos
-2. Screenshot with files of new CI repo should be in chat with homework's hashtags.
+- Create new one repo for CI yml files
+- Move CI from course project repo into new CI repo
+- Use **include** for injection moved CI from new project into course project
+2. Screenshots with files of new CI and course project repositories should be in chat with homework's hashtags.
 
 ### Links 4-1
 - [Gitlab anchors](https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html#anchors)
