@@ -37,13 +37,13 @@ Additional
 ## Homework 3-1
 *[#homework]() [#cicd3-1]()*
 1. Add new stage **dockerization**.
-2. Use **dind service** to package jar files from build stage and push images.
-3. Addinitionally you need to add a docker config as Gitlab variable DOCKER_CONFIG to push images in Gitlab registry. You will need predefined Gitlab variables for that.
-4. Use hash of commit as image tag 
+2. Create jobs use **dind service** to package jar files from build stage and push images.
+3. Addinitionally you need to add a docker config as Gitlab file variable DOCKER_CONFIG to push images in Gitlab registry. You will need predefined Gitlab variables for that.
+4. Image tage name starts with "dind-" and ends with short commit hash.
 5. Send screenshots of using dind in **gitlab-ci.yml** with homework's hashtags.
 
 ### Links 3-1
-- [Use Docker-in-Docker](Docker-in-Docker with TLS enabled in the Docker executor)
+- [Use Docker-in-Docker](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)
 - [Use Docker to build Docker images](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html)
 
 Additional
@@ -52,8 +52,8 @@ Additional
 
 ## Homework 3-2
 *[#homework]() [#cicd3-2]()*
-1. Add dockerization jobs with Kaniko in dockerization stage.
-2. To distinguish between images, add **dind** and **kaniko** in image names.
+1. Add dockerization job with Kaniko.
+2. Image tage name starts with "kaniko-" and ends with short commit hash
 3. Send screenshots with all dockerization jobs (dind and Kaniko) in **gitlab-ci.yml** with homework's hashtags.
 4. Remove DIND dockerization and keep Kaniko as best practice.
 
