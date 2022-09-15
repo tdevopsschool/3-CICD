@@ -53,8 +53,9 @@ Additional
 ## Homework 3-2
 *[#homework]() [#cicd3-2]()*
 1. Add dockerization jobs with Kaniko in dockerization stage.
-2. Send screenshots with all dockerization jobs (dind and Kaniko) in **gitlab-ci.yml** with homework's hashtags.
-3. Remove DIND dockerization and keep Kaniko as best practice.
+2. To distinguish between images, add **dind** and **kaniko** in image names.
+3. Send screenshots with all dockerization jobs (dind and Kaniko) in **gitlab-ci.yml** with homework's hashtags.
+4. Remove DIND dockerization and keep Kaniko as best practice.
 
 ### Links 3-2
 - [Kaniko docs](https://github.com/GoogleContainerTools/kaniko)
