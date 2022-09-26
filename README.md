@@ -84,8 +84,12 @@ Additional
 
 *You will use this workpiece later in Kubernetes module*
 1. Add dummy deploy jobs for “dev” and “prod” environments:
-- Add any URLs for both environments.
-2. Screenshot with environments should be in chat with homework's hashtags.
+- Add any URLs for both environments
+- Add a condition for deploying the application on production environment only from the master branch, using `rules:`
+- Add a variable with different values, depending on the environment for which a job is being started
+  - Protect the variable for Production environment
+  - Use `echo` to confirm the result
+2. Screenshot with deployed environments (**Deployments** -> **Environments**) should be in chat with homework's hashtags.
 
 ### Links 4-2
 - [Environments and deployments](https://docs.gitlab.com/ee/ci/environments/)
