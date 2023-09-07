@@ -1,3 +1,5 @@
+moved to https://gitlab.com/t-systems-devops-school/3-CICD
+
 ## Homework 1
 *[#homework]() [#cicd1]()*
 1. Create a dummy pileline:
